@@ -34,7 +34,7 @@ $color3: rgb(0, 104, 136);
 }
 
 @import "admin-styles/mixin";
-
+@import "_home";
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
 @import "admin-styles/chart";
@@ -42,12 +42,21 @@ $color3: rgb(0, 104, 136);
 @import "admin-styles/mediaquery";
 
 .header {
- @include flex(row,flex-end, stretch,2rem);
+ @include flex(row,center, stretch,2rem);
  width: 98%;
  margin: auto;
- // border: 1px solid red;
+ margin-top: 1rem;
 
-
+h4 {
+ 
+ border-radius: 20px;
+ width: 140px;
+ height: 31px;
+ padding: 1px 0px 1px 0px;
+ text-align: center;
+ font-size: large;
+ background-color: rgb(214,214,214);
+}
 a {
  color : $color2;
  letter-spacing: 2px;
