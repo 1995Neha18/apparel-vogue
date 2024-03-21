@@ -1,4 +1,5 @@
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaRupeeSign } from "react-icons/fa";
+import { LiaRupeeSignSolid } from "react-icons/lia";
 
 type ProductProps = {
   id: string;
@@ -23,7 +24,10 @@ const ProductCard = ({
     <div className="product-card">
       <img src={imageUrl} alt={name} />
       <p>{name}</p>
-      <span>rs {price}</span>
+      <p>
+        <FaRupeeSign />
+        <span>{price}</span>
+      </p>
       <div>
         <button onClick={() => handler()}>
           <FaPlus />
