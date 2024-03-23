@@ -18,7 +18,7 @@ const Home = () => {
       </h1>
       <main>
         <ProductCard
-          id="adshfjjbh"
+          productId="adshfjjbh"
           name="Macbook"
           price={4545}
           stock={45}
