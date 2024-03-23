@@ -29,6 +29,8 @@ padding: 2rem;
  display: flex;
  gap: 1rem;
  overflow-x: auto;
+ overflow-y: hidden;
+
 
  &::-webkit-scrollbar {
    display: none;
