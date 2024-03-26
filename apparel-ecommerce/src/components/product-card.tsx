@@ -12,7 +12,7 @@ type ProductProps = {
 // const server = "sffjfefnfkefn";
 
 const ProductCard = ({
- // productId,
+  // productId,
   name,
   imageUrl,
   // stock,

@@ -6,24 +6,27 @@ type cartItemsprops = {
 };
 
 const CartItems = ({ cartItem }: cartItemsprops) => {
-  const { productId, name, imageUrl,price, quantity } = cartItem;
+  const { productId, name, imageUrl, price, quantity } = cartItem;
 
   return (
     <div className="cart-items">
       <img src={imageUrl} alt={name} />
       <article>
-       <Link to={`/product/${productId}`} >{name}</Link>
-       <span> &#8377;</span>
-       <span>{price}</span>
+        <Link to={`/product/${productId}`}>{name}</Link>
+        <p>
+          <span> &#8377;</span>{" "}
+          <span>{price}</span>
+        </p>
       </article>
 
       <div>
-       <button>-</button>
-       <p>{quantity}</p>
-       <button>+</button>
-       <button><FaTrash/></button>
-
+        <button>-</button>
+        <p>{quantity}</p>
+        <button>+</button>
       </div>
+      <button>
+        <FaTrash />
+      </button>
     </div>
   );
 };
