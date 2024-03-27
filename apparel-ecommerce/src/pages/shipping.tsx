@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const Shipping = () => {
+  const navigate = useNavigate();
+
   const [shippingInfo, setShippingInfo] = useState({
     address: "",
     city: "",
@@ -18,7 +21,7 @@ const Shipping = () => {
 
   return (
     <div className="shipping">
-      <button>
+      <button className="back-btn" onClick={() => navigate("/cart")}>
         <BiArrowBack />
       </button>
 
