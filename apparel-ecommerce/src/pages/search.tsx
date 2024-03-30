@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ProductCard from "../components/product-card";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -6,6 +7,11 @@ const Search = () => {
   const [maxPrice, setMaxPrice] = useState(100000);
   const [category, setCategory] = useState("");
   const [page, setPage] = useState(1);
+
+  const addToCartHandler = () => {};
+
+  const isPrevPage = page > 1;
+  const isNextPage = page < 4;
 
   return (
     <div className="product-search-page">
@@ -30,8 +36,46 @@ const Search = () => {
             onChange={(e) => setMaxPrice(Number(e.target.value))}
           />
         </div>
+
+        <div>
+          <h4>Category</h4>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">All</option>
+            <option value="asc">Sample1</option>
+            <option value="dsc">Sample2</option>
+          </select>
+        </div>
       </aside>
-      <main></main>
+      <main>
+        <h1>Products</h1>
+        <input
+          type="text"
+          placeholder="Search by name..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
+        <div className="search-product-list">
+          <ProductCard
+            productId="adshfjjbh"
+            name="Macbook"
+            price={4545}
+            stock={45}
+            handler={addToCartHandler}
+            imageUrl="https://m.media-amazon.com/images/I/316ArzLeJ2L._SY445_SX342_QL70_FMwebp_.jpg"
+          />
+        </div>
+        <article>
+          <button disabled={!isPrevPage} onClick={() => setPage((prev) => prev - 1)}>Prev</button>
+          <span>
+            {page} of {4}
+          </span>
+          <button disabled={!isNextPage} onClick={() => setPage((prev) => prev + 1)}>Next</button>
+        </article>
+      </main>
     </div>
   );
 };
