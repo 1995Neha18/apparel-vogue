@@ -68,12 +68,23 @@ const Search = () => {
             imageUrl="https://m.media-amazon.com/images/I/316ArzLeJ2L._SY445_SX342_QL70_FMwebp_.jpg"
           />
         </div>
+
         <article>
-          <button disabled={!isPrevPage} onClick={() => setPage((prev) => prev - 1)}>Prev</button>
+          <button
+            disabled={!isPrevPage}
+            onClick={() => setPage((prev) => prev - 1)}
+          >
+            Prev
+          </button>
           <span>
             {page} of {4}
           </span>
-          <button disabled={!isNextPage} onClick={() => setPage((prev) => prev + 1)}>Next</button>
+          <button
+            disabled={!isNextPage}
+            onClick={() => setPage((prev) => prev + 1)}
+          >
+            Next
+          </button>
         </article>
       </main>
     </div>
