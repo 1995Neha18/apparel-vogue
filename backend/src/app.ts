@@ -1,11 +1,10 @@
 import express from "express";
+import userRoute from "./routes/user.js"
 
 const app = express();
 const port = 3100;
 
-// app.get("/product", (req, res) => {
-//   res.send("vhbsdjsb");
-// });
+app.use("/api/v1/user", userRoute)
 
 app.listen(port, () => {
   console.log(`Server is running on port http://localhost:${port}`);
