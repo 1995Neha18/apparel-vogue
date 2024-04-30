@@ -1,16 +1,16 @@
 import { User } from "../models/user.js";
 export const newUser = async (req, res, next) => {
     try {
-        console.log("role");
+        return next(new Error("Error"));
         const { name, email, gender, _id, imageUrl, dob } = req.body;
-        console.log(name, email, gender, _id, imageUrl, dob);
+        // console.log(name, email, gender, _id, imageUrl, dob);
         const user = await User.create({
             _id,
             name,
             email,
             gender,
             imageUrl,
-            dob,
+            dob: new Date(dob),
         });
         return res.status(200).json({
             success: true,
@@ -18,7 +18,7 @@ export const newUser = async (req, res, next) => {
         });
     }
     catch (error) {
-        return res.status(200).json({
+        return res.status(400).json({
             success: false,
             message: error,
         });
